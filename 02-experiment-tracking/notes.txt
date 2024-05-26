@@ -1,0 +1,14 @@
+Create conda environment - conda create -n exp-tracking-env
+Activate env - conda activate exp-tracking-env
+
+To install mlflow - pip install mlflow
+To start running mlflow - mlflow ui
+add --backend-store-uri so that all the experiment tracking info can be stored in the backend database
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+
+mlflow server -h 0.0.0.0 -p 5000 --backend-store-uri postgresql://DB_USER:DB_PASSWORD@DB_ENDPOINT:5432/DB_NAME --default-artifact-root s3://S3_BUCKET_NAME
+starting mlflow server on aws ec2 instance by specifying host, port, backend store, artifact root dir
+
+model files and artifacts
+
+hyperopt - library for hyperparameter optimization (works in distributed settings also)
