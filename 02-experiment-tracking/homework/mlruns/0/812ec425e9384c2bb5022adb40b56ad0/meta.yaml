@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/mlops-zoomcamp/02-experiment-tracking/homework/mlruns/0/812ec425e9384c2bb5022adb40b56ad0/artifacts
+end_time: 1716875293994
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 812ec425e9384c2bb5022adb40b56ad0
+run_name: upbeat-vole-991
+run_uuid: 812ec425e9384c2bb5022adb40b56ad0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716875274359
+status: 3
+tags: []
+user_id: codespace

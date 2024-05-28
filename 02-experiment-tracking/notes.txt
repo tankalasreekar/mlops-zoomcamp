@@ -9,6 +9,29 @@ mlflow ui --backend-store-uri sqlite:///mlflow.db
 mlflow server -h 0.0.0.0 -p 5000 --backend-store-uri postgresql://DB_USER:DB_PASSWORD@DB_ENDPOINT:5432/DB_NAME --default-artifact-root s3://S3_BUCKET_NAME
 starting mlflow server on aws ec2 instance by specifying host, port, backend store, artifact root dir
 
-model files and artifacts
+mlflow logging params, set tags, logging model files and artifacts
+
+# set custom tags to filter runs
+mlflow.set_tag("Developer", "Sreekar") - creates a custom tag and assigns value to a run
+
+# log params that affect the model's performance
+mlflow.log_param("train-data-path", "path")
+to log params, with parameter name and value
+
+# log metrics for comparing model's performance
+mlflow.log_metric("rmse", rmse)
+to log metrics, with metric name and value
+
+# log artifacts for future loading
+mlflow.log_artifact(local_path="models/preprocessor.b", artifact_path="preprocessor")
+to load model related files like preprocessor or model pickle files from local path to a specified artifact_path for mlflow to access later
+
+we can also log models directly using mlflow instead of creating pickle files and logging artifacts
+
+few frameworks like scikit-learn, xgboost, tensorflow have in built support functionalities to log model files and artifacts
+mlflow.xgboost.log_model(booster, artifact_path="models_mlflow")
+here, booster is the xgboost model, that gets saved to the artifact_path, where all the model files pickle, env, yaml files etc gets stored
+with functionality to load models using mlflow
 
 hyperopt - library for hyperparameter optimization (works in distributed settings also)
+
